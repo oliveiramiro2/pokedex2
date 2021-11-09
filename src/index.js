@@ -12,8 +12,12 @@ app.get("/", (req, res) => {
 })
 
 app.get("/pokemons", async (req, res) => {
-    const data = await buscar('/pokemon')
-    res.send(data)
+    try{
+        const data = await buscar('/pokemon')
+        res.send(data)
+    }catch(error){
+        res.send('Desculpe não foi possível buscar por este pokémon')
+    }
 })
 
 require('./router/pokemon')(app)
