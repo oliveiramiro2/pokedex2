@@ -1,5 +1,5 @@
 const initialState = {
-    cards: 5465465
+    cards: ''
 }
 
 const cardsPoke = (state=initialState.cards, action) => {

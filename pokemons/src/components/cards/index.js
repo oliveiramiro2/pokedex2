@@ -2,9 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { ContainerCardStyled, ContainerPageStyled } from './styled'
-//import { changeCards } from './../../store/action/cardsA'
+import changeCards from './../../store/action/cardsA'
 
-function PokeCards({ cards }){
+function PokeCards({ cards, changeCards }){
+
+    React.useEffect(()=>{
+        changeCards()
+    }, [changeCards])
 
     console.log(cards, 'ok')
     return(
@@ -39,8 +43,8 @@ function PokeCards({ cards }){
 
 const mapStateToProps = state => {
     return{
-        cards: state.cards
+        cards: state.cards.cards
     }
 }
 
-export default connect(mapStateToProps)(PokeCards)
+export default connect(mapStateToProps, { changeCards })(PokeCards)

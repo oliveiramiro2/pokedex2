@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 app.get("/pokemons", async (req, res) => {
     try{
         const data = await buscar('/pokemon')
-        res.send(data)
+        res.json(data)
     }catch(error){
         res.send('Desculpe não foi possível buscar por este pokémon')
     }
