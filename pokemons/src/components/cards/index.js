@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { ContainerCardStyled, ContainerPageStyled } from './styled'
 import changeCards from './../../store/action/cardsA'
 
+const urlImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+
 function PokeCards({ cards, changeCards }){
 
     React.useEffect(()=>{
@@ -18,7 +20,8 @@ function PokeCards({ cards, changeCards }){
                 {cards.results.map((poke, id) => {
                     return(
                     <ContainerCardStyled key={id}>
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`} />
+                        <img 
+                            src={`${urlImg}${poke.url.slice(34, -1)}.png`} alt='poke-img' />
                         <p>{poke.name}</p>
                     </ContainerCardStyled>
                     )
