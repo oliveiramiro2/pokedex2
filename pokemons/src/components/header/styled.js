@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const ContainerStyled = styled.header`
+export const HeaderStyled = styled.header`
     background-color: ${({theme}) => theme.colorPrimary};
-    width: 100%;
     color: ${({theme}) => theme.colorSecondary};
     padding: 1%;
+    display: flex;
+    justify-content: space-between;
 `

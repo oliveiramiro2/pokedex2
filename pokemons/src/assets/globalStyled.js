@@ -7,6 +7,10 @@ const globalStyle = createGlobalStyle`
         margin: 0;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
+
+    body {
+        overflow-x: hidden;
+    }
 `
 
 export default globalStyle

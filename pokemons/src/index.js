@@ -12,9 +12,8 @@ const theme = {
 
 ReactDOM.render(
   <React.StrictMode>
-    
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>     
       <App />
     </ThemeProvider>
   </React.StrictMode>,
