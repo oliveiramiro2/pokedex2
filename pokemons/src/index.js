@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import GlobalStyle from './assets/globalStyled'
 import { ThemeProvider } from 'styled-components'
+import { Provider } from 'react-redux';
+import { store } from './store/store'
 
 const theme = {
   colorPrimary: '#000000',
@@ -12,9 +15,12 @@ const theme = {
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <GlobalStyle />
-    <ThemeProvider theme={theme}>     
-      <App />
+    <ThemeProvider theme={theme}> 
+      <Provider store={store}> 
+        <App />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

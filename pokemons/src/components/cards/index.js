@@ -1,12 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import { ContainerCardStyled, ContainerPageStyled } from './styled'
+//import { changeCards } from './../../store/action/cardsA'
 
-function PokeCards(){
+function PokeCards({ cards }){
+
+    console.log(cards, 'ok')
     return(
         <ContainerPageStyled>
             <ContainerCardStyled>
-                <img width="30%" height="30%" />
+                ok
             </ContainerCardStyled>
             <ContainerCardStyled>
                 ok
@@ -33,4 +37,10 @@ function PokeCards(){
     )
 }
 
-export default PokeCards
+const mapStateToProps = state => {
+    return{
+        cards: state.cards
+    }
+}
+
+export default connect(mapStateToProps)(PokeCards)
