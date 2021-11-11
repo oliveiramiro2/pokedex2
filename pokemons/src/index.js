@@ -2,10 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GlobalStyle from './assets/globalStyled'
+import { ThemeProvider } from 'styled-components'
+
+const theme = {
+  colorPrimary: '#000000',
+  colorSecondary: "#ffffff",
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
