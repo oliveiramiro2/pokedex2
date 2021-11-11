@@ -16,4 +16,9 @@ export const ContainerCardStyled = styled.div`
     padding: 1%;
     border: gold 5px solid;
     opacity: 0.8; 
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 `

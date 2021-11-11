@@ -11,34 +11,28 @@ function PokeCards({ cards, changeCards }){
     }, [changeCards])
 
     console.log(cards, 'ok')
-    return(
-        <ContainerPageStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-            <ContainerCardStyled>
-                ok
-            </ContainerCardStyled>
-        </ContainerPageStyled>
-    )
+
+    if(cards){
+        return(
+            <ContainerPageStyled>
+                {cards.results.map((poke, id) => {
+                    return(
+                    <ContainerCardStyled key={id}>
+                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.slice(34, -1)}.png`} />
+                        <p>{poke.name}</p>
+                    </ContainerCardStyled>
+                    )
+                })}               
+            </ContainerPageStyled>
+        )
+    }else{
+        return(
+            <div>
+                <p>Carregando...</p>
+            </div>
+        )
+    }
+    
 }
 
 const mapStateToProps = state => {

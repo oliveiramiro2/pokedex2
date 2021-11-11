@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/pokemons", async (req, res) => {
-    try{
-        const data = await buscar('/pokemon')
+    try{      
+        const data = await buscar('/pokemon?offset='+req.query.page*20+'&limit=20')
         res.json(data)
     }catch(error){
         res.send('Desculpe não foi possível buscar por este pokémon')
