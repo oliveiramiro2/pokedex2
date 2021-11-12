@@ -14,7 +14,7 @@ function PokeCards({ cards, changeCards }){
     React.useEffect(()=>{
         changeCards()
     }, [changeCards])
-
+    
     if(cards){
         return(
             <div>
@@ -22,7 +22,9 @@ function PokeCards({ cards, changeCards }){
                 <ContainerPageStyled>
                     {cards.results.map((poke, id) => {
                         return(                        
-                        <ContainerCardStyled key={id}>
+                        <ContainerCardStyled 
+                            key={id} onClick={() => localStorage.setItem("NumeroPoke", poke.url.slice(34, -1))}
+                        >
                             <Link to="/info">
                                 <img src={`${urlImg}${poke.url.slice(34, -1)}.png`} alt='poke-img' />      
                                 <p>{poke.name}</p>
