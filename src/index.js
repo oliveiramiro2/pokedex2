@@ -25,11 +25,8 @@ app.get("/poke", async (req, res) => {
 
 app.get("/pokemons", async (req, res) => {
     const numPokePag = 20
-    let tipoPoke = {
-        tipo: ''
-    }
     try{      
-        const data = await buscar('/pokemon?offset='+req.query.page*numPokePag+'&limit=20')
+        const data = await buscar('/pokemon?offset='+req.query.page*numPokePag+'&limit=20')       
         res.json(data)
     }catch(error){
         res.send('Desculpe não foi possível buscar por este pokémon')

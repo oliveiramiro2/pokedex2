@@ -1,15 +1,15 @@
-import React from "react"
+import { Routes, Route } from 'react-router-dom'
 
-import Header from "./components/header";
-import PokeCards from "./components/cards";
+import PokeCards from "./components/cards"
+import Home from "./components/home";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header />
-        <PokeCards />
-      </header>
+      <Routes>
+        <Route path="/cards" element={<PokeCards />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }

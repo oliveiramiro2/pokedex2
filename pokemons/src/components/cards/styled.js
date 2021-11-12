@@ -22,3 +22,9 @@ export const ContainerCardStyled = styled.div`
     justify-content: space-between;
     align-items: center;
 `
+
+export const LoadStyled = styled.p`
+    text-align: center;
+    margin-top: 20%;
+    font-size: 2em;
+`

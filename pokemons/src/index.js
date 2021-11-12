@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
 
 import GlobalStyle from './assets/globalStyled'
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
 import { store } from './store/store'
 
 const theme = {
@@ -14,15 +15,14 @@ const theme = {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    
+  <BrowserRouter>
     <GlobalStyle />
-    <ThemeProvider theme={theme}> 
-      <Provider store={store}> 
-        <App />
-      </Provider>
+    <ThemeProvider theme={theme}>      
+        <Provider store={store}> 
+          <App />
+        </Provider>     
     </ThemeProvider>
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
