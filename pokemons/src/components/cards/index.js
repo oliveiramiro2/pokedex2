@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { CgPokemon } from 'react-icons/cg'
+import { Link } from 'react-router-dom'
 
 import Header from '../header'
 import { ContainerCardStyled, ContainerPageStyled, LoadStyled } from './styled'
@@ -20,12 +21,14 @@ function PokeCards({ cards, changeCards }){
                 <Header />
                 <ContainerPageStyled>
                     {cards.results.map((poke, id) => {
-                        return(
+                        return(                        
                         <ContainerCardStyled key={id}>
-                            <img src={`${urlImg}${poke.url.slice(34, -1)}.png`} alt='poke-img' />
-                            <p>{poke.name}</p>
+                            <Link to="/info">
+                                <img src={`${urlImg}${poke.url.slice(34, -1)}.png`} alt='poke-img' />      
+                                <p>{poke.name}</p>
+                            </Link>
                         </ContainerCardStyled>
-                        )
+                        )                        
                     })}               
                 </ContainerPageStyled>
             </div>

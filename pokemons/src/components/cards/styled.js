@@ -7,20 +7,32 @@ export const ContainerPageStyled = styled.div`
 `
 
 export const ContainerCardStyled = styled.div`
-    background-color: #000;
-    width: 200px;
-    height: 150px;
+    background-color: ${({theme}) => theme.colorPrimary};
+    width: 250px;
+    height: 200px;
     border-radius: 15px;
-    color: #fff;
     margin: 1%;
-    padding: 1%;
-    border: gold 5px solid;
-    opacity: 0.8; 
+    border: red 5px solid;
+    opacity: 0.9; 
     text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    cursor: pointer;
+
+    & a{
+        color: ${({theme}) => theme.colorSecondary};
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    & a:hover{
+        transition: .2s ease-in-out;
+        background-color: rgb(255, 255, 255, 0.3);
+        font-size: 1.3em;
+        color: gold;
+    }
 `
 
 export const LoadStyled = styled.p`
