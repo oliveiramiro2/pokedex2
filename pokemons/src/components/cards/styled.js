@@ -35,6 +35,19 @@ export const ContainerCardStyled = styled.div`
     }
 `
 
+export const ContainerNav = styled.footer`
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+
+    & button{
+        margin: 0 2%;
+        background-color: #444444;
+        color: #fff;
+        padding: 0.5%;
+    }
+`
+
 export const LoadStyled = styled.p`
     text-align: center;
     margin-top: 20%;

@@ -4,10 +4,14 @@ import { CgPokemon } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 
 import Header from '../header'
-import { ContainerCardStyled, ContainerPageStyled, LoadStyled } from './styled'
 import changeCards from './../../store/action/cardsA'
 
+import { 
+    ContainerCardStyled, ContainerPageStyled, LoadStyled, ContainerNav 
+} from './styled'
+
 const urlImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+let page = 0
 
 function PokeCards({ cards, changeCards }){
 
@@ -15,6 +19,18 @@ function PokeCards({ cards, changeCards }){
         changeCards()
     }, [changeCards])
     
+    const handlerPage = (action) => { 
+        if(action === 1){
+            if(page > 0)
+                page = page-1
+            else
+                page = 0
+        }else{
+            page = page+1
+        }        
+        changeCards(page)
+    }
+
     if(cards){
         return(
             <div>
@@ -33,6 +49,10 @@ function PokeCards({ cards, changeCards }){
                         )                        
                     })}               
                 </ContainerPageStyled>
+                <ContainerNav>
+                    <button onClick={() => handlerPage(1)}>Anterior</button>
+                    <button onClick={() => handlerPage(2)}>Proxima</button>
+                </ContainerNav>
             </div>
         )
     }else{

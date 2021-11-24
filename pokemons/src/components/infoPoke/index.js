@@ -21,7 +21,6 @@ function InfoPoke({ info, changeInfo }){
         setVerify(!verify)
     }
         
-    console.log(info)
     if(info){
         
         return(
@@ -78,8 +77,8 @@ function InfoPoke({ info, changeInfo }){
                         <TextInfoStyled>
                             <p>
                                 {info.types[0].type.name}
-                                {info.types[1]? ', '+info.types[1].type.name : ''} 
-                                {info.types[2]? ' e '+info.types[2].type.name+'' : ''}
+                                {info.types[1] ? ', '+info.types[1].type.name : ''} 
+                                {info.types[2] ? ' e '+info.types[2].type.name+'' : ''}
                             </p>
                         </TextInfoStyled>
                     </BasicInfoStyled>
@@ -87,12 +86,12 @@ function InfoPoke({ info, changeInfo }){
                 </ContainerBasicStyled>
                 <BasicInfoStyled>
                     <img src={'tipos/'+info.types[0].type.name+'.png'} alt='foto-tipo' width='80' /> 
-                    {info.types[1]?
+                    {info.types[1] ?
                         <img src={'tipos/'+info.types[1].type.name+'.png'} alt='foto-tipo' width='80' /> 
                     : 
                         <></>
                     } 
-                    {info.types[2]?
+                    {info.types[2] ?
                         <img src={'tipos/'+info.types[2].type.name+'.png'} alt='foto-tipo' width='80' /> 
                     : 
                         <></>
