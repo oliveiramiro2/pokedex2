@@ -12,7 +12,7 @@ const urlImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 function PokeCards({ cards, changeCards }){
 
     React.useEffect(()=>{
-        changeCards(5)
+        changeCards()
     }, [changeCards])
     
     if(cards){

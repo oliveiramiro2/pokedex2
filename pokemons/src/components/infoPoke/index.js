@@ -12,6 +12,7 @@ import {
 } from './styled'
 
 function InfoPoke({ info, changeInfo }){
+    
     const [verify, setVerify] = React.useState(true)
     const [show, setShow] = React.useState({ padrao: 'mostrarDefault', segunda: 'ocultar' })
 
@@ -68,13 +69,11 @@ function InfoPoke({ info, changeInfo }){
                 
                 <ContainerBasicStyled>
                     <BasicInfoStyled>
-
                         <TextInfoStyled tipo="nome">
                             <p>{info.species.name}</p>
                         </TextInfoStyled>
-
                     </BasicInfoStyled>
-
+                   
                     <BasicInfoStyled>
                         <TextInfoStyled>
                             <p>
@@ -86,7 +85,19 @@ function InfoPoke({ info, changeInfo }){
                     </BasicInfoStyled>
             
                 </ContainerBasicStyled>
-
+                <BasicInfoStyled>
+                    <img src={'tipos/'+info.types[0].type.name+'.png'} alt='foto-tipo' width='80' /> 
+                    {info.types[1]?
+                        <img src={'tipos/'+info.types[1].type.name+'.png'} alt='foto-tipo' width='80' /> 
+                    : 
+                        <></>
+                    } 
+                    {info.types[2]?
+                        <img src={'tipos/'+info.types[2].type.name+'.png'} alt='foto-tipo' width='80' /> 
+                    : 
+                        <></>
+                    } 
+                </BasicInfoStyled>
                 <BasicInfoStyled>  
                     <TextInfoStyled>Sprites</TextInfoStyled>
                     <div>                 
